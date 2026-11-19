@@ -1,0 +1,25 @@
+{
+  "functions": {
+    "api/index.js": {
+      "includeFiles": "data.json,public/**,preview/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/socket.io/(.*)",
+      "destination": "/api/index.js"
+    },
+    {
+      "source": "/preview",
+      "destination": "/preview/chat-bloom-preview.html"
+    },
+    {
+      "source": "/preview/(.*)",
+      "destination": "/preview/$1"
+    }
+  ]
+}
